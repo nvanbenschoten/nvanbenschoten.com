@@ -1,0 +1,14 @@
+{
+	"name": "nvanbenschoten.com",
+	"description": "Nathan VanBenschoten's Personal Website/Web-app",
+	"version": "0.0.1",
+	"engines": {
+		"node": "0.10.x"
+	},
+	"dependencies": {
+		"express": "4.6.x",
+		"glob": "3.2.x",
+		"mongoose": "3.8.x",
+		"underscore": "1.6.x"
+	}
+}
