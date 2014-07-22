@@ -6,8 +6,8 @@
 var express = require('express');
 
 module.exports = function() {
-	// Initialize express app
-	var app = express();
+    // Initialize express app
+    var app = express();
 
-	return app;
+    return app;
 };
