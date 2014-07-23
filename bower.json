@@ -1,0 +1,15 @@
+{
+    "version": "0.0.1",
+    "name": "www.nvanbenschoten.com",
+    "author": "Nathan VanBenschoten",
+    "description": "Nathan VanBenschoten's Personal Website",
+    "url": "http://www.nvanbenschoten.com",
+    "repository" : {"type": "git", "url": "git://github.com/nvanbenschoten/nvanbenschoten.git"},
+    "main": "src/index.html",
+    "dependencies": {
+        "angular": "latest",
+        "bootstrap": "latest",
+        "core-elements": "Polymer/core-elements#latest",
+        "paper-elements": "Polymer/paper-elements#latest"
+    }
+}

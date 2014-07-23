@@ -1,10 +1,9 @@
 {
-    "name": "nvanbenschoten.com",
-    "description": "Nathan VanBenschoten's Personal Website/Web-app",
     "version": "0.0.1",
-    "engines": {
-        "node": "0.10.x"
-    },
+    "name": "api.nvanbenschoten.com",
+    "author": "Nathan VanBenschoten",
+    "description": "Nathan VanBenschoten's Personal Web-app",
+    "repository" : {"type": "git", "url": "git://github.com/nvanbenschoten/nvanbenschoten.git"},
     "dependencies": {
         "express": "4.6.x",
         "forever": "0.11.x",
