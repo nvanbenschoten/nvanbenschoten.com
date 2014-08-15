@@ -8,6 +8,10 @@
     "main": "src/index.html",
     "dependencies": {
         "angular": "latest",
+        "angular-route": "latest",
+        "angular-resource": "latest",
+        "angular-animate": "latest",
+        "jquery": "latest",
         "bootstrap": "latest",
         "core-elements": "Polymer/core-elements#latest",
         "paper-elements": "Polymer/paper-elements#latest"
