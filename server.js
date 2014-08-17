@@ -38,7 +38,7 @@ var api = require('./api');
 app.use(api.controllers);
 
 // Add error handler to application
-app.use(require('./lib/error').errorHandler);
+app.use(require('./lib/error').ErrorHandler);
 
 // Start the app by listening on port
 var port = NV.config.port;

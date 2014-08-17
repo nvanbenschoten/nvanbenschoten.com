@@ -45,7 +45,7 @@ router.route('/config')
 
 // assume 404 since no middleware responded
 router.use(function(req, res, next) {
-    res.status(404).json({ message: "Object not found" });
+    return next(new Error.ObjectNotFoundError());
 });
 
 /**

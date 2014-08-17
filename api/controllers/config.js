@@ -11,7 +11,7 @@ module.exports.read = function(req, res) {
         .findOne({})
         .exec(function(err, config) {
             if (err) return next(err);
-            if (!config) return next(new Error('App Configuration not set'));
+            if (!config) return next(new Error('App configuration has not yet been set'));
 
             res.status(200).send(config);
         });
