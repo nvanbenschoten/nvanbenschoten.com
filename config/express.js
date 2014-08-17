@@ -26,7 +26,9 @@ module.exports = function(db, config) {
     app.use(bodyParser.urlencoded({extended: true})) // Parse application/x-www-form-urlencoded
     app.use(bodyParser.json()); // Parse application/json
     app.use(methods()); // Adapt http put and delete verbs
-    app.use(defaultHeaders); // Add deault headers to requests
+
+    // Add on default headers
+    app.use(defaultHeaders);
 
     return app;
 };

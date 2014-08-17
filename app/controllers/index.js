@@ -36,4 +36,15 @@ module.exports = function(app, config) {
     // Update configs
     app.put('/config', controllers.config.update);
 
+    /* =========================================================================
+     *
+     *   Not Found
+     *
+     * ========================================================================= */
+
+    // assume 404 since no middleware responded
+    app.use(function(req, res, next) {
+        res.status(404).json({ message: "Object not found" });
+    });
+
 }
