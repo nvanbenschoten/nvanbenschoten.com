@@ -23,7 +23,7 @@
         "winston": "latest"
     },
     "scripts": {
-        "postinstall": "bower install",
+        "postinstall": "bower install --allow-root",
 
         "prestart": "npm install",
         "start": "nohup forever server.js >> output.log &"
