@@ -5,7 +5,8 @@
     "description": "Nathan VanBenschoten's Personal Website",
     "url": "http://www.nvanbenschoten.com",
     "repository" : {"type": "git", "url": "git://github.com/nvanbenschoten/nvanbenschoten.git"},
-    "main": "src/index.html",
+    "main": "public/index.html",
+    "private": true,
     "dependencies": {
         "angular": "latest",
         "angular-route": "latest",

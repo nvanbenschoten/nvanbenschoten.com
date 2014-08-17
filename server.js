@@ -22,7 +22,7 @@ global.NV.config = require('./config/config');
 global.NV.logger = utils.createLogger(NV.config.log);
 
 // Display app info
-NV.logger.info(NV.config.app.title);
+NV.logger.info(NV.config.app.name);
 NV.logger.info(NV.config.db);
 
 // Bootstrap db connection

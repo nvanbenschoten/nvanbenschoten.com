@@ -1,9 +1,15 @@
 'use strict';
 
+/**
+ * Module dependencies
+ */
+var pkg = require('../../package.json');
+
 module.exports = {
     app: {
-        title: 'nvanbenschoten.com',
-        description: 'Nathan VanBenschoten\'s Personal Website/Web-app'
+        name: pkg.name,
+        description: pkg.description,
+        version: pkg.version,
     },
     port: process.env.PORT || 3000,
     log: {

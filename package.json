@@ -1,6 +1,6 @@
 {
     "version": "0.0.1",
-    "name": "api.nvanbenschoten.com",
+    "name": "nvanbenschoten.com",
     "author": "Nathan VanBenschoten",
     "description": "Nathan VanBenschoten's Personal Web-app",
     "repository" : {"type": "git", "url": "git://github.com/nvanbenschoten/nvanbenschoten.git"},
@@ -9,6 +9,7 @@
         "async": "latest",
         "body-parser": "latest",
         "compression": "latest",
+        "cors": "latest",
         "express": "latest",
         "forever": "latest",
         "glob": "latest",
@@ -16,6 +17,8 @@
         "method-override": "latest",
         "mongoose": "latest",
         "mongoose-schema-extend": "latest",
+        "serve-favicon": "latest",
+        "serve-static": "latest",
         "underscore": "latest",
         "winston": "latest"
     },
