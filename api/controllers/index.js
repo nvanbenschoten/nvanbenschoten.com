@@ -4,8 +4,8 @@
  * Module dependencies
  */
 var express = require('express');
-var  utils = require('../../lib/utils');
-var  Error = require('../../lib/error');
+var   utils = require('../../lib/utils');
+var   Error = require('../../lib/error');
 
 // load all the controllers in the directory
 var controllers = utils.loadDirFiles(__dirname);
@@ -14,9 +14,7 @@ var controllers = utils.loadDirFiles(__dirname);
 var router = express.Router();
 
 /* =========================================================================
- *
  *   Global
- *
  * ========================================================================= */
 
 router.all('/', function(req, res) {
@@ -24,9 +22,7 @@ router.all('/', function(req, res) {
 });
 
 /* =========================================================================
- *
  *   Config Routes
- *
  * ========================================================================= */
 
 router.route('/config')
@@ -38,9 +34,7 @@ router.route('/config')
     .put(controllers.config.update);
 
 /* =========================================================================
- *
  *   Not Found
- *
  * ========================================================================= */
 
 // assume 404 since no middleware responded
