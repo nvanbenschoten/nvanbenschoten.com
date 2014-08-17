@@ -3,48 +3,52 @@
 /**
  * Module dependencies
  */
-var utils = require('../../lib/utils')
+var express = require('express');
+var  utils = require('../../lib/utils');
+var  Error = require('../../lib/error');
 
 // load all the controllers in the directory
 var controllers = utils.loadDirFiles(__dirname);
 
+// Create router
+var router = express.Router();
+
+/* =========================================================================
+ *
+ *   Global
+ *
+ * ========================================================================= */
+
+router.all('/', function(req, res) {
+    res.send(NV.config.app); 
+});
+
+/* =========================================================================
+ *
+ *   Config Routes
+ *
+ * ========================================================================= */
+
+router.route('/config')
+    // Retrieve configs
+    .get(controllers.config.read)
+    // Create configs
+    .post(controllers.config.create)
+    // Update configs
+    .put(controllers.config.update);
+
+/* =========================================================================
+ *
+ *   Not Found
+ *
+ * ========================================================================= */
+
+// assume 404 since no middleware responded
+router.use(function(req, res, next) {
+    res.status(404).json({ message: "Object not found" });
+});
+
 /**
  * Expose routes
  */
-module.exports = function(app, config) {
-
-    /* =========================================================================
-     *
-     *   Global
-     *
-     * ========================================================================= */
-
-    app.get('/', function(req, res) { res.send(config.app); });
-
-    /* =========================================================================
-     *
-     *   Config Routes
-     *
-     * ========================================================================= */
-
-    // Retrieve configs
-    app.get('/config', controllers.config.read);
-
-    // Create configs
-    app.post('/config', controllers.config.create);
-
-    // Update configs
-    app.put('/config', controllers.config.update);
-
-    /* =========================================================================
-     *
-     *   Not Found
-     *
-     * ========================================================================= */
-
-    // assume 404 since no middleware responded
-    app.use(function(req, res, next) {
-        res.status(404).json({ message: "Object not found" });
-    });
-
-}
+module.exports = router;

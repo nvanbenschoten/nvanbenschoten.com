@@ -20,15 +20,14 @@ module.exports = function(db, config) {
     app.locals.description = config.app.description;
 
     // Configure middleware
+    // app.use(favicon());
     app.use(logParams); // Log request url and params
     app.use(compression()); // GZIP data
     app.use(cors()); // Enable cross-origin resource sharing
     app.use(bodyParser.urlencoded({extended: true})) // Parse application/x-www-form-urlencoded
     app.use(bodyParser.json()); // Parse application/json
     app.use(methods()); // Adapt http put and delete verbs
-
-    // Add on default headers
-    app.use(defaultHeaders);
+    app.use(defaultHeaders); // Add on default headers
 
     return app;
 };
