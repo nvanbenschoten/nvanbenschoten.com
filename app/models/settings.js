@@ -10,11 +10,11 @@ var mongoose = require('mongoose'),
  * Settings Schema
  */
 var SettingsSchema = new Schema({
-    color: {
-        red: 100,
-        green: 100,
-        blue: 100
-    }
+    // color: {
+    //     red: 100,
+    //     green: 100,
+    //     blue: 100
+    // }
 });
 
 mongoose.model('Settings', SettingsSchema);

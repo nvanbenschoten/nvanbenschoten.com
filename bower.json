@@ -11,9 +11,9 @@
         "angular-route": "latest",
         "angular-resource": "latest",
         "angular-animate": "latest",
-        "jquery": "latest",
         "bootstrap": "latest",
         "core-elements": "Polymer/core-elements#latest",
+        "jquery": "latest",
         "paper-elements": "Polymer/paper-elements#latest"
     }
 }

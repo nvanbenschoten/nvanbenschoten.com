@@ -4,13 +4,19 @@
     "author": "Nathan VanBenschoten",
     "description": "Nathan VanBenschoten's Personal Web-app",
     "repository" : {"type": "git", "url": "git://github.com/nvanbenschoten/nvanbenschoten.git"},
+    "private": true,
     "dependencies": {
-        "express": "4.6.x",
-        "forever": "0.11.x",
-        "glob": "3.2.x",
-        "mongoose": "3.8.x",
-        "underscore": "1.6.x",
-        "http-server": "^0.6.1"
+        "async": "latest",
+        "body-parser": "latest",
+        "compression": "latest",
+        "express": "latest",
+        "forever": "latest",
+        "glob": "latest",
+        "http-server": "latest",
+        "method-override": "latest",
+        "mongoose": "latest",
+        "underscore": "latest",
+        "winston": "latest"
     },
     "scripts": {
         "postinstall": "bower install",
