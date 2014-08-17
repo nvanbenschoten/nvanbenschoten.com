@@ -3,18 +3,15 @@
 /**
  * Module dependencies
  */
-var mongoose = require('mongoose');
-var   Schema = mongoose.Schema;
+var   mongoose = require('mongoose');
+var     extend = require('mongoose-schema-extend')
+var BaseSchema = require('./schemas/base')
 
 /**
  * Settings Schema
  */
-var ConfigSchema = new Schema({
-    // color: {
-    //     red: 100,
-    //     green: 100,
-    //     blue: 100
-    // }
+var ConfigSchema = BaseSchema.extend({
+    color: { type: String, required: true },
 });
 
 mongoose.model('Config', ConfigSchema);

@@ -15,6 +15,7 @@
         "http-server": "latest",
         "method-override": "latest",
         "mongoose": "latest",
+        "mongoose-schema-extend": "latest",
         "underscore": "latest",
         "winston": "latest"
     },

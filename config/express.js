@@ -3,10 +3,10 @@
 /**
  * Module dependencies
  */
-var    express = require('express');
-var   compress = require('compression');
-var bodyParser = require('body-parser');
-var    methods = require('method-override')
+var     express = require('express');
+var compression = require('compression');
+var  bodyParser = require('body-parser');
+var     methods = require('method-override')
 
 module.exports = function(db, config) {
     // Initialize express app
@@ -17,11 +17,11 @@ module.exports = function(db, config) {
     app.locals.description = config.app.description;
 
     // Configure middleware
-    app.use(compress()); // GZIP data
+    app.use(compression()); // GZIP data
     app.use(bodyParser.urlencoded({extended: true})) // parse application/x-www-form-urlencoded
     app.use(bodyParser.json()); // parse application/json
+    app.use(methods()); // parse http verbs
 
-    app.use(methods());
     app.use(logParams);
     app.use(defaultHeaders);
 

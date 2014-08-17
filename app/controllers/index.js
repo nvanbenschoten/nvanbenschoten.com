@@ -19,6 +19,13 @@ module.exports = function(app, config) {
      *
      * ========================================================================= */
 
-     app.get('/config', controllers.config.read);
+    // Retrieve configs
+    app.get('/config', controllers.config.read);
+
+    // Create configs
+    app.post('/config', controllers.config.create);
+
+    // Update configs
+    app.put('/config', controllers.config.update);
 
 }
