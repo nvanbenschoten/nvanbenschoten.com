@@ -26,6 +26,6 @@
         "postinstall": "bower install",
 
         "prestart": "npm install",
-        "start": "http-server -p 8000"
+        "start": "nohup forever server.js >> output.log &"
     }
 }
