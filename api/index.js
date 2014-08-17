@@ -3,7 +3,6 @@
 /**
  * Module dependencies
  */
-var  path = require('path');
 var utils = require('../lib/utils')
 
 module.exports = {

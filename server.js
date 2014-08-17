@@ -31,10 +31,13 @@ var db = mongoose.connect(NV.config.db);
 // Init the express application
 var app = require('./config/express')(db, NV.config);
 
-// Add application controllers
-app.use(require('./app').controllers);
+// Import API
+var api = require('./api');
 
-// Add error handler to app
+// Add application controllers
+app.use(api.controllers);
+
+// Add error handler to application
 app.use(require('./lib/error').errorHandler);
 
 // Start the app by listening on port
