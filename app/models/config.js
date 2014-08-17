@@ -3,13 +3,13 @@
 /**
  * Module dependencies
  */
-var mongoose = require('mongoose'),
-      Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var   Schema = mongoose.Schema;
 
 /**
  * Settings Schema
  */
-var SettingsSchema = new Schema({
+var ConfigSchema = new Schema({
     // color: {
     //     red: 100,
     //     green: 100,
@@ -17,4 +17,4 @@ var SettingsSchema = new Schema({
     // }
 });
 
-mongoose.model('Settings', SettingsSchema);
+mongoose.model('Config', ConfigSchema);

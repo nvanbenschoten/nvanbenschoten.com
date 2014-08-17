@@ -4,26 +4,17 @@
  * Module dependencies
  */
 var    express = require('express');
-var       path = require('path');
-var     config = require('./config');
 var   compress = require('compression');
 var bodyParser = require('body-parser');
 var    methods = require('method-override')
 
-module.exports = function() {
+module.exports = function(db, config) {
     // Initialize express app
     var app = express();
-
-    // Globbing model files
-    // config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
-    //     require(path.resolve(modelPath));
-    // });
 
     // Setting application local variables
     app.locals.title = config.app.title;
     app.locals.description = config.app.description;
-    //app.locals.jsFiles = config.getJavaScriptAssets();
-    //app.locals.cssFiles = config.getCSSAssets();
 
     // Configure middleware
     app.use(compress()); // GZIP data
