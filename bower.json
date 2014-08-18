@@ -9,9 +9,9 @@
     "private": true,
     "dependencies": {
         "angular": "latest",
-        "angular-route": "latest",
-        "angular-resource": "latest",
         "angular-animate": "latest",
+        "angular-resource": "latest",
+        "angular-route": "latest",
         "bootstrap": "latest",
         "jquery": "latest"
     }

@@ -3,6 +3,7 @@
  */
 
 html { 
+    height: 100%;
     background: url(../images/background.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,16 +16,18 @@ body {
 }
 
 .content {
-    width: 512px;
-    margin-left: 120px;
+    width: 38%;
+    margin-left: 50px;
 }
 
 #title-text {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 45px;
+    font-size: 250%;
     color: rgba(0,0,0,0);
-    margin-bottom: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 0px;
 }
 
 /** Detail View **/
