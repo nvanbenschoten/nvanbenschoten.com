@@ -5,11 +5,13 @@
  */
 var controllers = angular.module('nvControllers', [])
 
-.controller('MainCtrl', ['$scope', 'Phone', 
-    function($scope, Phone) {
+.controller('MainCtrl', ['$scope', 'Config', 
+    function($scope, Config) {
 
-        $scope.phones = Phone.query();
-        $scope.orderProp = 'age';
+        $scope.config = Config.get().$promise.then(function(data) {
+            console.log(data);
+            angular.element('#title-text').css('color', data.color);
+        });
 
     }
 ])

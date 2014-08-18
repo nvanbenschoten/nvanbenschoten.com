@@ -10,18 +10,20 @@ var app = angular.module('nvApp', [
     'nvServices',
 ]);
 
-app.config(['$routeProvider',
-    function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider',
+    function($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
+
         $routeProvider.
-            when('/phones', {
-                templateUrl: 'partials/root.html',
+            when('/', {
+                templateUrl: 'templates/root.html',
                 controller: 'MainCtrl'
             }).
             when('/phones/:phoneId', {
-                templateUrl: 'partials/detail.html',
+                templateUrl: 'templates/detail.html',
                 controller: 'DetailCtrl'
             }).
             otherwise({
-                redirectTo: '/phones'
+                redirectTo: '/'
             });
     }]);

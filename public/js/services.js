@@ -5,17 +5,9 @@
  */
 angular.module('nvServices', ['ngResource'])
 
-.factory('Phone', ['$resource',
+.factory('Config', ['$resource',
     function($resource) {
-        return $resource('phones/:phoneId.json', {}, {
-
-            query: {
-                method: 'GET',
-                params: {
-                    phoneId: 'phones'
-                },
-                isArray: true
-            }
+        return $resource('http://api.nvanbenschoten.com/config', {}, {
 
         });
     }
