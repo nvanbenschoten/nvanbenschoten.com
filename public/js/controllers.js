@@ -10,7 +10,8 @@ var controllers = angular.module('nvControllers', [])
 
         $scope.config = Config.get().$promise.then(function(data) {
             console.log(data);
-            angular.element('#title-text').css('color', data.color);
+            angular.element('#toolbar').css('background-color', data.color);
+            $scope.materialClass = data.color;
         });
 
     }
