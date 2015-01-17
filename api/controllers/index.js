@@ -4,8 +4,9 @@
  * Module dependencies
  */
 var express = require('express');
+var    auth = require('../../config/authorization');
 var   utils = require('../../lib/utils');
-var   Error = require('../../lib/error');
+var  Errors = require('../../lib/error');
 
 // load all the controllers in the directory
 var controllers = utils.loadDirFiles(__dirname);
@@ -29,9 +30,9 @@ router.route('/config')
     // Retrieve configs
     .get(controllers.config.read)
     // Create configs
-    .post(controllers.config.create)
+    .post(auth.requiresAuth, controllers.config.create)
     // Update configs
-    .put(controllers.config.update);
+    .put(auth.requiresAuth, controllers.config.update);
 
 /* =========================================================================
  *   Experience Routes
@@ -41,15 +42,15 @@ router.route('/experience')
     // Retrieve experiences
     .get(controllers.experience.list)
     // Create experience
-    .post(controllers.experience.create);
+    .post(auth.requiresAuth, controllers.experience.create);
 
 router.route('/experience/:id')
     // Retrieve experience
     .get(controllers.experience.read)
     // Update experience
-    .put(controllers.experience.update)
+    .put(auth.requiresAuth, controllers.experience.update)
     // Delete experience
-    .delete(controllers.experience.delete)
+    .delete(auth.requiresAuth, controllers.experience.delete)
 
 /* =========================================================================
  *   Not Found
@@ -57,7 +58,7 @@ router.route('/experience/:id')
 
 // assume 404 since no middleware responded
 router.use(function(req, res, next) {
-    return next(new Error.ObjectNotFoundError());
+    return next(new Errors.ObjectNotFoundError());
 });
 
 /**

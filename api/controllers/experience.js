@@ -30,7 +30,6 @@ module.exports.list = function(req, res, next) {
 }
 
 module.exports.create = function(req, res, next) {
-    console.log(req)
     Experience.create(req.body, 
         function(err, experience) {
             if (err) return next(err);
