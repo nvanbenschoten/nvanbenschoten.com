@@ -8,7 +8,7 @@ var     extend = require('mongoose-schema-extend')
 var BaseSchema = require('./schemas/base')
 
 /**
- * Settings Schema
+ * Config Schema
  */
 var ConfigSchema = BaseSchema.extend({
     color : { type: String, required: true },

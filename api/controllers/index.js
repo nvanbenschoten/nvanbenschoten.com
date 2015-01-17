@@ -34,6 +34,24 @@ router.route('/config')
     .put(controllers.config.update);
 
 /* =========================================================================
+ *   Experience Routes
+ * ========================================================================= */
+
+router.route('/experience')
+    // Retrieve experiences
+    .get(controllers.experience.list)
+    // Create experience
+    .post(controllers.experience.create);
+
+router.route('/experience/:id')
+    // Retrieve experience
+    .get(controllers.experience.read)
+    // Update experience
+    .put(controllers.experience.update)
+    // Delete experience
+    .delete(controllers.experience.delete)
+
+/* =========================================================================
  *   Not Found
  * ========================================================================= */
 

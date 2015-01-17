@@ -11,7 +11,7 @@ module.exports = {
         description: pkg.description,
         version: pkg.version,
     },
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 8000,
     log: {
       level: 'debug',
       location: 'logs/server.log',

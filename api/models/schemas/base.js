@@ -28,3 +28,4 @@ function setDate(date) {
 }
 
 module.exports = BaseSchema;
+module.exports.setDate = setDate;
