@@ -17,7 +17,4 @@ module.exports = {
       location: 'logs/server.log',
       console: true
     },
-    auth: {
-      token: process.env.AUTH_TOKEN || "1234"
-    }
 };
