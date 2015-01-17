@@ -17,7 +17,12 @@ app.config(['$routeProvider', '$locationProvider',
         $routeProvider.
             when('/', {
                 templateUrl: 'templates/root.html',
-                controller: 'MainCtrl'
+                controller: 'MainCtrl',
+                resolve: {
+                    config: ['Config', function (Config) {
+                        return Config.get();
+                    }]
+                }
             }).
             when('/phones/:phoneId', {
                 templateUrl: 'templates/detail.html',
