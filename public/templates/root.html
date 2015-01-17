@@ -1,7 +1,5 @@
 <section id="header">
     <div id="header-text">
-        <!-- <h1>Nathan VanBenschoten</h1>
-        <h2>student | engineer | entrepreneur</h2> -->
         <h1>{{config.title}}</h1>
         <h2>{{config.subtitle}}</h2>
     </div>
@@ -23,7 +21,7 @@
     <div class="content">
         <h3 class="title">Experiences</h3>
         <div class="details" style="margin-bottom: -32px;">
-            <div ng-repeat="experience in experiences | orderBy:endDate" class="experience">
+            <div ng-repeat="experience in experiences | orderBy:'endDate':true" class="experience">
                 <div class="experience-date" ng-show="{{experience.startDate != null}}">
                     <h3 class="secondary" ng-show="{{experience.endDate != null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – {{experience.endDate | utc | date:'MMMM yyyy'}}</h3>
                     <h3 class="secondary" ng-show="{{experience.endDate == null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – Present</h3>

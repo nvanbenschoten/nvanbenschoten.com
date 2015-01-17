@@ -31,6 +31,8 @@ angular.module('nvFilters', [])
     }
 
     return function(website) {
+        if (!website) return website;
+
         website = removePrefix(website, "http://");
         website = removePrefix(website, "https://");
         website = removePrefix(website, "www.");
