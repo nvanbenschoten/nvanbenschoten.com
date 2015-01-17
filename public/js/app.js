@@ -19,8 +19,11 @@ app.config(['$routeProvider', '$locationProvider',
                 templateUrl: 'templates/root.html',
                 controller: 'MainCtrl',
                 resolve: {
-                    config: ['Config', function (Config) {
+                    config: ['Config', function(Config) {
                         return Config.get();
+                    }],
+                    experiences: ['Experience', function (Experience) {
+                        return Experience.query();
                     }]
                 }
             }).

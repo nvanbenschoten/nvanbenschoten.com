@@ -1,7 +1,9 @@
 <section id="header">
     <div id="header-text">
-        <h1>Nathan VanBenschoten</h1>
-        <h2>student | engineer | entrepreneur</h2>
+        <!-- <h1>Nathan VanBenschoten</h1>
+        <h2>student | engineer | entrepreneur</h2> -->
+        <h1>{{config.title}}</h1>
+        <h2>{{config.subtitle}}</h2>
     </div>
     <div id="header-chevron">
         <div id="header-chevron-div" class="sink" ng-click="chevronClicked()">
@@ -13,22 +15,23 @@
     <div class="content">
         <h3 class="title">About</h3>
         <div class="details">
-            <p>{{config.theme}}</p>
+            <p>{{config.about}}</p>
         </div>
     </div>
 </section>
 <section id="experiences" class="dark-section">
     <div class="content">
         <h3 class="title">Experiences</h3>
-        <div class="details" style="margin-bottom: -16px;">
-            <div ng-repeat="experience in experiences" class="experience">
-                <div class="experience-date">
-                    <h3 class="secondary">{{experience.start}} – {{experience.end}}</h3>
+        <div class="details" style="margin-bottom: -32px;">
+            <div ng-repeat="experience in experiences | orderBy:endDate" class="experience">
+                <div class="experience-date" ng-show="{{experience.startDate != null}}">
+                    <h3 class="secondary" ng-show="{{experience.endDate != null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – {{experience.endDate | utc | date:'MMMM yyyy'}}</h3>
+                    <h3 class="secondary" ng-show="{{experience.endDate == null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – Present</h3>
                 </div>
                 <div class="experience-details">
                     <h2>{{experience.company}}</h2>
                     <p>{{experience.title}}</p>
-                    <a class="secondary" ng-href="{{experience.link}}" target="_">{{experience.link}}</a>
+                    <a class="secondary" ng-href="{{experience.link}}" ng-show="{{experience.link != null}}" target="_">{{experience.link | website}}</a>
                 </div>
             </div>
         </div>
@@ -38,7 +41,7 @@
     <div class="content two">
         <h3 class="title">Contact</h3>
         <div class="details">
-            <p>This is sample text until I think of good shit to put in here</p>
+            <p>This is sample text until I think of good info to put in here</p>
         </div>
     </div>
 </section>

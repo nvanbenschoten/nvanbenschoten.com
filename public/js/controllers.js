@@ -5,40 +5,17 @@
  */
 var controllers = angular.module('nvControllers', [])
 
-.controller('MainCtrl', ['$scope', 'config', 
-    function($scope, config) {
+.controller('MainCtrl', ['$scope', 'config', 'experiences',
+    function($scope, config, experiences) {
 
         $scope.config = config;
+        $scope.experiences = experiences;
 
         $scope.chevronClicked = function() {
             $('html, body').animate({
                 scrollTop: $("#about").offset().top
             }, 1200);
         }
-
-        $scope.experiences = [
-            {
-                start: "Jan 15, 2015",
-                end: "Present",
-                company: "Google",
-                title: "Software Engineering Intern",
-                link: "https://www.google.com"
-            },
-            {
-                start: "July 12, 2014",
-                end: "Jan 15, 2015",
-                company: "Tablelist",
-                title: "Lead Android Engineer",
-                link: "https://www.tablelist.com"
-            },
-            {
-                start: "Feb 12, 2012",
-                end: "Jan 15, 2014",
-                company: "Drizly",
-                title: "Android Engineer",
-                link: "https://www.drizly.com"
-            }
-        ];
 
     }
 ])
