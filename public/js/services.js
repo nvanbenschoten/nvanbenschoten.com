@@ -12,3 +12,19 @@ angular.module('nvServices', ['ngResource'])
         });
     }
 ])
+
+.factory('About', ['$resource',
+    function($resource) {
+        return $resource('http://api.nvanbenschoten.com/about', {}, {
+
+        });
+    }
+])
+
+.factory('Experience', ['$resource',
+    function($resource) {
+        return $resource('http://api.nvanbenschoten.com/experience', {}, {
+
+        });
+    }
+])

@@ -1,6 +1,47 @@
-<div class="container-fluid">
-    <div class="content">
-        <h1 id="title-text">NATHAN VANBENSCHOTEN</h1>
-        <hr>
+<section id="header">
+    <div id="header-text">
+        <h1>Nathan VanBenschoten</h1>
+        <h2>student | engineer | entrepreneur</h2>
     </div>
-</div>
+    <div id="header-chevron">
+        <div id="header-chevron-div" class="sink" ng-click="chevronClicked()">
+            <img id="header-chevron-img" src="../images/down-arrow.png">
+        </div>
+    </div>
+</section>
+<section id="about" class="light-section">
+    <div class="content">
+        <h3 class="title">About</h3>
+        <div class="details">
+            <p>{{config.theme}}</p>
+        </div>
+    </div>
+</section>
+<section id="experiences" class="dark-section">
+    <div class="content">
+        <h3 class="title">Experiences</h3>
+        <div class="details" style="margin-bottom: -16px;">
+            <div ng-repeat="experience in experiences" class="experience">
+                <div class="experience-date">
+                    <h3 class="secondary">{{experience.start}} – {{experience.end}}</h3>
+                </div>
+                <div class="experience-details">
+                    <h2>{{experience.company}}</h2>
+                    <p>{{experience.title}}</p>
+                    <a class="secondary" ng-href="{{experience.link}}" target="_">{{experience.link}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="light-section">
+    <div class="content two">
+        <h3 class="title">Contact</h3>
+        <div class="details">
+            <p>This is sample text until I think of good shit to put in here</p>
+        </div>
+    </div>
+</section>
+<section id="footer">
+
+</section>
