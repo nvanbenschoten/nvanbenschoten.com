@@ -11,8 +11,9 @@ var BaseSchema = require('./schemas/base')
  * Config Schema
  */
 var ConfigSchema = BaseSchema.extend({
-    color : { type: String, required: true },
-    theme : { type: String },
+    title    : { type: String, required: true },
+    subtitle : { type: String, required: true },
+    about    : { type: String, required: true },
 });
 
 mongoose.model('Config', ConfigSchema);
