@@ -11,10 +11,10 @@ var controllers = angular.module('nvControllers', [])
         $scope.config = config;
         $scope.experiences = experiences;
 
-        $scope.chevronClicked = function() {
+        $scope.scrollTo = function(id) {
             $('html, body').animate({
-                scrollTop: $("#about").offset().top
-            }, 1200);
+                scrollTop: $('#' + id).offset().top
+            }, 1000);
         }
 
     }

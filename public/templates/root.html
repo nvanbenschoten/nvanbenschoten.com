@@ -1,48 +1,61 @@
 <section id="header">
     <div id="header-text">
         <h1>{{config.title}}</h1>
-        <h2>{{config.subtitle}}</h2>
+        <h4>{{config.subtitle}}</h4>
     </div>
     <div id="header-chevron">
-        <div id="header-chevron-div" class="sink" ng-click="chevronClicked()">
+        <div id="header-chevron-div" class="sink" ng-click="scrollTo('about')">
             <img id="header-chevron-img" src="../images/down-arrow.png">
         </div>
     </div>
 </section>
-<section id="about" class="light-section">
-    <div class="content">
+<section id="about" class="container-fluid light-section">
+    <div class="col-md-1"/>
+    <div class="col-md-2">
         <h3 class="title">About</h3>
-        <div class="details">
-            <p>{{config.about}}</p>
-        </div>
     </div>
+    <div class="col-md-8">
+        <p class="large-text">{{config.about}}</p>
+    </div>
+    <div class="col-md-1"/>
 </section>
-<section id="experiences" class="dark-section">
-    <div class="content">
+<section id="experiences" class="container-fluid dark-section">
+    <div class="col-md-1"/>
+    <div class="col-md-2">
         <h3 class="title">Experiences</h3>
-        <div class="details" style="margin-bottom: -32px;">
-            <div ng-repeat="experience in experiences | orderBy:'endDate':true" class="experience">
-                <div class="experience-date" ng-show="{{experience.startDate != null}}">
-                    <h3 class="secondary" ng-show="{{experience.endDate != null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – {{experience.endDate | utc | date:'MMMM yyyy'}}</h3>
-                    <h3 class="secondary" ng-show="{{experience.endDate == null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – Present</h3>
-                </div>
-                <div class="experience-details">
-                    <h2>{{experience.company}}</h2>
-                    <p>{{experience.title}}</p>
-                    <a class="secondary" ng-href="{{experience.link}}" ng-show="{{experience.link != null}}" target="_">{{experience.link | website}}</a>
-                </div>
+    </div>  
+    <div class="col-md-8 experience-container">
+        <div class="row experience" ng-repeat="experience in experiences | orderBy:'endDate':true">
+            <div class="col-md-5" ng-show="{{experience.startDate != null}}">
+                <h4 class="secondary" ng-show="{{experience.endDate != null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – {{experience.endDate | utc | date:'MMMM yyyy'}}</h4>
+                <h4 class="secondary" ng-show="{{experience.endDate == null}}">{{experience.startDate | utc | date:'MMMM yyyy'}} – Present</h4>
+            </div>
+            <div class="col-md-7 experience-details">
+                <h3>{{experience.company}}</h3>
+                <h5>{{experience.title}}</h5>
+                <a class="secondary" ng-href="{{experience.link}}" ng-show="{{experience.link != null}}" target="_">{{experience.link | website}}</a>
             </div>
         </div>
-    </div>
+    </div>  
+    <div class="col-md-1"/>
 </section>
-<section id="contact" class="light-section">
-    <div class="content two">
+<section id="contact" class="container-fluid light-section">
+    <div class="col-sm-1"/>
+    <div class="col-sm-2">
         <h3 class="title">Contact</h3>
-        <div class="details">
-            <p>This is sample text until I think of good info to put in here</p>
-        </div>
     </div>
+    <div class="col-sm-8">
+        <p class="large-text">This is sample text until I think of good info to put in here</p>
+    </div>
+    <div class="col-sm-1"/>
 </section>
-<section id="footer">
-
+<section id="footer" class="container-fluid">
+    <div class="col-xs-1"/>
+    <div class="col-xs-5">
+        <p>© Nathan VanBenschoten</p>
+    </div>
+    <div class="col-xs-5">
+        <p class="right">Find this project on <a href="https://github.com/nvanbenschoten/nvanbenschoten.com" target="_">Github</a></p>
+    </div>
+    <div class="col-xs-1"/>
 </section>
