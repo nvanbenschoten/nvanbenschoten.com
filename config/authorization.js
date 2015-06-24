@@ -3,7 +3,7 @@
 /**
  * Module dependencies
  */
- var Errors = require('../lib/error');
+var Errors = require('../lib/error');
 
 module.exports.requiresAuth = function(req, res, next) {
     // Check if auth token is set up

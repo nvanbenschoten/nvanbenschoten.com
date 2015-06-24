@@ -34,6 +34,10 @@ router.route('/config')
     // Update configs
     .put(auth.requiresAuth, controllers.config.update);
 
+router.route('/config/fridge')
+    // Retrieve fridge config
+    .get(auth.requiresAuth, controllers.config.fridge)
+
 /* =========================================================================
  *   Experience Routes
  * ========================================================================= */

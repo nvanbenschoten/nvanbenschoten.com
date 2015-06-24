@@ -41,3 +41,8 @@ module.exports.update = function(req, res, next) {
         module.exports.read(req, res, next);
     })
 }
+
+module.exports.fridge = function(req, res, next) {
+    if (!NV.config.fridge) return next(new Error('Fridge config could not be found.'));
+    return res.status(200).send(NV.config.fridge);
+}

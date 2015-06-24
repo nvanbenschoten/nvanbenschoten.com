@@ -13,7 +13,7 @@ module.exports.read = function(req, res, next) {
         .findOne({_id: experienceId})
         .exec(function(err, experience) {
             if (err) return next(err);
-            if (!experience) return next(new Error('Exerience could not be found.'));
+            if (!experience) return next(new Error('Experience could not be found.'));
 
             res.status(200).send(experience);
         });
