@@ -36,7 +36,7 @@ router.route('/config')
 
 router.route('/config/fridge')
     // Retrieve fridge config
-    .get(auth.requiresAuth, controllers.config.fridge)
+    .get(controllers.config.fridge)
 
 /* =========================================================================
  *   Experience Routes
