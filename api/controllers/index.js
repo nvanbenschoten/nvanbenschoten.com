@@ -58,7 +58,7 @@ router.route('/experience/:id')
 
 router.route('/fridge/config')
     // Retrieve fridge config
-    .get(auth.requiresAuth, controllers.fridge.config.read)
+    .get(controllers.fridge.config.read)
     // Create fridge config
     .post(auth.requiresAuth, controllers.fridge.config.create)
     // Update fridge config
