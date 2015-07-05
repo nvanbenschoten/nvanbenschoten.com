@@ -34,10 +34,6 @@ router.route('/config')
     // Update configs
     .put(auth.requiresAuth, controllers.config.update);
 
-router.route('/config/fridge')
-    // Retrieve fridge config
-    .get(controllers.config.fridge)
-
 /* =========================================================================
  *   Experience Routes
  * ========================================================================= */
@@ -55,6 +51,22 @@ router.route('/experience/:id')
     .put(auth.requiresAuth, controllers.experience.update)
     // Delete experience
     .delete(auth.requiresAuth, controllers.experience.delete)
+
+/* =========================================================================
+ *   Fridge Routes
+ * ========================================================================= */
+
+ router.route('/fridge/config')
+    // Retrieve fridge config
+    .get(auth.requiresAuth, controllers.fridge.config.read)
+    // Create fridge config
+    .post(auth.requiresAuth, controllers.fridge.config.create)
+    // Update fridge config
+    .put(auth.requiresAuth, controllers.fridge.config.update);
+
+router.route('/fridge/unlock')
+    // Attempt to unlock fridge
+    .post(auth.requiresAuth, controllers.fridge.unlock)
 
 /* =========================================================================
  *   Not Found

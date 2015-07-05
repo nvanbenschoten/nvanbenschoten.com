@@ -35,7 +35,7 @@ module.exports.create = function(req, res, next) {
             if (err) return next(err);
 
             return res.status(201).send(experience);
-    })
+    });
 }
 
 module.exports.update = function(req, res, next) {
@@ -59,5 +59,5 @@ module.exports.delete = function(req, res, next) {
             if (err) return next(err);
 
             res.status(200).send({_id: experienceId});
-    })
+    });
 }

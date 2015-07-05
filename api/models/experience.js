@@ -4,8 +4,8 @@
  * Module dependencies
  */
  var   mongoose = require('mongoose');
- var     extend = require('mongoose-schema-extend')
- var BaseSchema = require('./schemas/base')
+ var     extend = require('mongoose-schema-extend');
+ var BaseSchema = require('./schemas/base');
 
  /**
   * Experience Schema
@@ -16,7 +16,7 @@ var ExperienceSchema = BaseSchema.extend({
     description : { type: String },
     link        : { type: String },
     startDate   : { type: Date, set: BaseSchema.setDate },
-    endDate     : { type: Date, set: BaseSchema.setDate }
+    endDate     : { type: Date, set: BaseSchema.setDate },
 });
 
 mongoose.model('Experience', ExperienceSchema);

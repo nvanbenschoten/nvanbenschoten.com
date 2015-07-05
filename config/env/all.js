@@ -5,11 +5,6 @@
  */
 var pkg = require('../../package.json');
 
-var fridge = {};
-try {
-  fridge = require('../../../fridge.json');
-} catch(e) { }
-
 module.exports = {
     app: {
         name: pkg.name,
@@ -22,5 +17,4 @@ module.exports = {
       location: 'logs/server.log',
       console: true
     },
-    fridge: fridge,
 };
